@@ -20,6 +20,8 @@ add_library(nnpack ${sources} ${sources_neon})
 add_dependencies(nnpack psimd_clang)
 target_link_libraries(nnpack ${objects_psimd})
 
+set_target_properties(nnpack PROPERTIES PUBLIC_HEADER "../include/nnpack.h")
+
 install(TARGETS nnpack
 	LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
 	PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
