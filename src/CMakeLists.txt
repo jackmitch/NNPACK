@@ -21,6 +21,7 @@ add_library(nnpack ${sources} ${sources_neon})
 add_dependencies(nnpack psimd_clang)
 target_link_libraries(nnpack ${objects_psimd})
 
+target_compile_options(nnpack PUBLIC -fPIC)
 set_target_properties(nnpack PROPERTIES PUBLIC_HEADER "../include/nnpack.h")
 
 install(TARGETS nnpack
