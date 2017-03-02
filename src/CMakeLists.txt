@@ -8,6 +8,7 @@ separate_arguments(CLANGSPLIT)
 add_custom_target(
         psimd_clang
 	COMMAND ${CLANGSPLIT}
+	-fPIC
 	-c
 	-I ${CMAKE_SOURCE_DIR}/include
 	-I ${CMAKE_SOURCE_DIR}/src
