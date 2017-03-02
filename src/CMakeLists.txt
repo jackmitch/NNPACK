@@ -19,3 +19,9 @@ string(REPLACE "\.c" "\.o" objects_psimd ${sources_psimd})
 add_library(nnpack ${sources} ${sources_neon})
 add_dependencies(nnpack psimd_clang)
 target_link_libraries(nnpack ${objects_psimd})
+
+install(TARGETS nnpack
+	LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+	PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
+	ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+)
