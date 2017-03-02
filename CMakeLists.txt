@@ -20,3 +20,9 @@ endif()
 include_directories(include)
 include_directories(${CMAKE_SOURCE_DIR}/src)
 add_subdirectory(src)
+
+install(TARGETS nnpack
+	LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+	PUBLIC_HEADER DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
+	ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+)
